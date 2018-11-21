@@ -1,0 +1,36 @@
+{
+    "goods": [
+        {
+            "id": "1", "categoryId": "1", "title": "good1", "description": "lorem"
+        },
+        {
+            "id": "2", "categoryId": "2", "title": "good2", "description": "lorem"
+        },
+        {
+            "id": "3", "categoryId": "3", "title": "good3", "description": "lorem"
+        },
+        {
+            "id": "4", "categoryId": "4", "title": "good4", "description": "lorem"
+        },
+        {
+            "id": "5", "categoryId": "5", "title": "good5", "description": "lorem"
+        },
+        {
+            "id": "6", "categoryId": "6", "title": "good6", "description": "lorem"
+        },
+        {
+            "id": "7", "categoryId": "7", "title": "good7", "description": "lorem"
+        },
+        {
+            "id": "8", "categoryId": "8", "title": "good8", "description": "lorem"
+        },
+        {
+            "id": "9", "categoryId": "9", "title": "good9", "description": "lorem"
+        }
+    ],
+    "categories":[
+        { "id": "1", "title": "Apple"},
+        { "id": "1", "title": "Google"},
+        { "id": "1", "title": "Microsoft"}
+    ]
+}

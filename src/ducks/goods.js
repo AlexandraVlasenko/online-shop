@@ -1,6 +1,7 @@
 import {createAction, createReducer} from 'redux-act';
 import axios from 'axios';
 import {API} from '../service';
+import _ from 'lodash'
 
 
 export const   REDUCER = 'GOODS'
@@ -8,8 +9,8 @@ const NS = `${REDUCER}__`;
 
 
 const initialState ={
-    items: [],
-    concatisLoading: false,
+    data: {},
+    isLoading: false,
     error: ''
 };
 
@@ -25,7 +26,7 @@ const readSuccess = createAction(`${NS}READ_SUCCESS`);
 reducer.on(readSuccess, (state, items)=>({
     ...state,
     isLoading: false,
-    items: [...items]
+    data: _.keyBy(items, 'id')
 }));
 
 const readFailure = createAction(`${NS}READ_FAILURE`);
@@ -38,8 +39,11 @@ export const readGoods = () => dispatch =>{
     dispatch(readRequest());
     return axios
     .get(`${API}goods/`)
-    .then(response =>{
-        dispatch(readSuccess(response.data.goods));
+    .then(({ status, statusText, data}) =>{
+        if(status !== 200){
+            throw new Error(statusText)
+        }
+        dispatch(readSuccess(data));
     })
     .catch(error =>{
         dispatch(readFailure());

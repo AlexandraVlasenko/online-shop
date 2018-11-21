@@ -7,7 +7,7 @@ const NS = `${REDUCER}__`;
 
 const initialState ={
     items: [],
-    concatisLoading: false,
+    isLoading: false,
     error: ''
 };
 

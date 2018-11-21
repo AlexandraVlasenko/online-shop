@@ -8,12 +8,12 @@ import createRootReducer from './ducks';
 export const history = createBrowserHistory()
 
 
-let store
+let store;
 
 const configureStore =() =>{
     const midddlewares = [routerMiddleware(history), thunk]
     const enhancers = composeWithDevTools(applyMiddleware(...midddlewares))
-    store = createStore(createRootReducer(History), compose(enhancers))
+    store = createStore(createRootReducer(history), compose(enhancers))
     return store
 }
 

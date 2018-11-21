@@ -1,5 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {readGoods} from './ducks/goods';
+import Goods from './Goods'
 
-const HomePage =()=> <div>Home</div>
+
+import {dispatch} from './store'
+
+class HomePage extends Component {
+    componentDidMount() {
+        dispatch(readGoods())
+
+    }
+
+    render(){
+        return(
+            <div>
+                HomePage
+               <Goods />
+            </div>
+        )
+    }
+}
+
+
 
 export default HomePage
